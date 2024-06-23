@@ -65,66 +65,26 @@ const Home = () => {
       </div>
 
       <div>
-        <h1 className='text-center w-full font-bold'>What We Offer</h1>
-        {/* <div className='w-full flex justify-center'>
-          <div className='bg-white w-[25%] mx-3'>
-            <div className='w-[98%] text-center'>
-              <div className='mx-auto pt-10'>
-                <img src={img1} alt={`Image`} className='mx-auto' />
+        <h1 style={{ color: 'rgb(4, 80, 116)' }} className='text-center w-full font-bold text-4xl mt-9 mb-9'>What We Offer</h1>
+        <div className='w-full flex justify-center flex-wrap'>
+          {data.map((item, index) => (
+            <div key={index} className='bg-white w-[80%] sm:w-[45%] md:w-[30%] lg:w-[27%] xl:w-[27%] mx-3 mb-6 shadow-md'>
+              <div className='w-[100%] text-center'>
+                <div className='w-[90%] m-auto pt-10'>
+                  <img src={item.imgSrc} alt={`Image ${index}`} className='mx-auto' />
+                </div>
+                <h1 className='font-bold mt-9'>{item.title}</h1>
+                <p className='text-gray-900 my-4'>{item.description}</p>
+                <button
+                  className="w-[80%] bg-transparent border border-green-500 text-green-500 rounded-full mt-7 mb-12 px-4 py-2 mt-4 hover:bg-green-500 hover:text-white transition duration-300 ease-in-out"
+                >
+                  Read More
+                </button>
               </div>
-              <h1 className='font-bold mt-9'>Expertise</h1>
-              <p className='text-gray-900 my-4 '>We have years of experience in helping customers determine how to manage their money and make smarter financial decisions</p>
-              <button
-                className=" w-[80%] bg-transparent border border-green-500 text-green-500 rounded-full  mt-7 mb-12 px-4 py-2 mt-4 hover:bg-green-500 hover:text-white transition duration-300 ease-in-out max-w-[80%]"
-              > Read More
-              </button>
             </div>
-          </div>
-          <div className='bg-white w-[25%] mx-3'>
-            <div className='w-[98%] text-center'>
-              <div className='mx-auto pt-10'>
-                <img src={img1} alt={`Image`} className='mx-auto' />
-              </div>
-              <h1 className='font-bold mt-9'>Expertise</h1>
-              <p className='text-gray-900 my-4 '>We have years of experience in helping customers determine how to manage their money and make smarter financial decisions</p>
-              <button
-                className=" w-[80%] bg-transparent border border-green-500 text-green-500 rounded-full  mt-7 mb-12 px-4 py-2 mt-4 hover:bg-green-500 hover:text-white transition duration-300 ease-in-out max-w-[80%]"
-              > Read More
-              </button>
-            </div>
-          </div>
-          <div className='bg-white w-[25%] mx-3'>
-            <div className='w-[98%] text-center'>
-              <div className='mx-auto pt-10'>
-                <img src={img1} alt={`Image`} className='mx-auto' />
-              </div>
-              <h1 className='font-bold mt-9'>Expertise</h1>
-              <p className='text-gray-900 my-4 '>We have years of experience in helping customers determine how to manage their money and make smarter financial decisions</p>
-              <button
-                className=" w-[80%] bg-transparent border border-green-500 text-green-500 rounded-full  mt-7 mb-12 px-4 py-2 mt-4 hover:bg-green-500 hover:text-white transition duration-300 ease-in-out max-w-[80%]"
-              > Read More
-              </button>
-            </div>
-          </div>
-        </div> */}
-         <div className='w-full flex justify-center flex-wrap'>
-      {data.map((item, index) => (
-        <div key={index} className='bg-white w-[25%] sm:w-[45%] md:w-[30%] lg:w-[22%] xl:w-[18%] mx-3 mb-6'>
-          <div className='w-[98%] text-center'>
-            <div className='mx-auto pt-10'>
-              <img src={item.imgSrc} alt={`Image ${index}`} className='mx-auto' />
-            </div>
-            <h1 className='font-bold mt-9'>{item.title}</h1>
-            <p className='text-gray-900 my-4'>{item.description}</p>
-            <button
-              className="w-[80%] bg-transparent border border-green-500 text-green-500 rounded-full mt-7 mb-12 px-4 py-2 mt-4 hover:bg-green-500 hover:text-white transition duration-300 ease-in-out"
-            >
-              Read More
-            </button>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
+
       </div>
     </div>
   );
