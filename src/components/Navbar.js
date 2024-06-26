@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import UptickLogo from '../assets/UptickLogo.webp';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import UptickLogo from "../assets/UptickLogo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md sticky top-0">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -50,7 +50,10 @@ const Navbar = () => {
           </div>
 
           <div className="hidden sm:flex sm:ml-6 space-x-4">
-            <Link to="/" className="text-gray-900 hover:bg-[#4dba58] px-3 py-2 rounded-md text-sm font-medium">
+            <Link
+              to="/"
+              className="text-gray-900 hover:bg-[#4dba58] px-3 py-2 rounded-md text-sm font-medium"
+            >
               Home
             </Link>
             <Link
@@ -75,13 +78,7 @@ const Navbar = () => {
               to="/partner"
               className="text-gray-900 hover:bg-[#4dba58] px-3 py-2 rounded-md text-sm font-medium"
             >
-              Partner
-            </Link>
-            <Link
-              to="/program"
-              className="text-gray-900 hover:bg-[#4dba58] px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Program
+              Partner Program
             </Link>
             <Link
               to="/blogs"
@@ -170,5 +167,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
