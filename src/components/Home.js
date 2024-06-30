@@ -1,77 +1,95 @@
 // src/components/Home.js
 import React from "react";
-import img1 from "../assets/img1.webp";
 import heroImg from "../assets/hero-img.webp";
+import { Link } from "react-router-dom";
+
+import dependability from "../assets/dependability.webp"
+import discretion from "../assets/discretion.webp"
+import efficency from "../assets/efficency.webp"
+import expertise from "../assets/expertise.webp"
+
+
+import patnership from "../assets/patnership.webp"
+import consulting from "../assets/consulting.webp"
+import sales from "../assets/sales.webp"
 
 const dataArray = [
   {
-    imgSrc: img1,
+    imgSrc: expertise,
     title: "Expertise",
     description:
       "We have years of experience in helping customers determine how to manage their money and make smarter financial decisions",
   },
   {
-    imgSrc: img1,
-    title: "Expertise",
+    imgSrc: discretion,
+    title: "Discretion",
     description:
-      "We have years of experience in helping customers determine how to manage their money and make smarter financial decisions",
+      "You can count on us to keep things under wraps. Your privacy is our top priority",
   },
   {
-    imgSrc: img1,
-    title: "Expertise",
+    imgSrc: efficency,
+    title: "Efficiency",
     description:
-      "We have years of experience in helping customers determine how to manage their money and make smarter financial decisions",
+      "Our representatives strive to provide fast and efficient service while delivering their best work.",
   },
   {
-    imgSrc: img1,
-    title: "Expertise",
+    imgSrc: dependability,
+    title: "Dependability",
     description:
-      "We have years of experience in helping customers determine how to manage their money and make smarter financial decisions",
+      "You will be in good hands with our experienced representatives who can help you reach those long-awaited financial goals.",
   },
 ];
 
 const data = [
   {
-    imgSrc: img1,
-    title: "Expertise",
+    imgSrc: consulting,
+    title: "Consulting",
     description:
-      "We have years of experience in helping customers determine how to manage their money and make smarter financial decisions",
+      "Save time when you need it the most, and get ahead on important financial decisions.",
+    link: '/services'
   },
   {
-    imgSrc: img1,
-    title: "Expertise",
+    imgSrc: sales,
+    title: "Sales",
     description:
-      "We have years of experience in helping customers determine how to manage their money and make smarter financial decisions",
+      "You will enjoy company growth faster than you expected, by streamlining services and features. ",
+    link: '/products'
   },
   {
-    imgSrc: img1,
-    title: "Expertise",
+    imgSrc: patnership,
+    title: "Partnership",
     description:
-      "We have years of experience in helping customers determine how to manage their money and make smarter financial decisions",
+      "Our support team is available every day to make sure that things run smoothly. We’re here to help. ",
+    link: '/partner-program'
   },
 ];
+
+const handleBookAppointmentClick = () => {
+  window.open('https://mail.google.com/mail/?view=cm&fs=1&to=mahummaqbool24@gmail.com', '_blank');
+};
 
 const Home = () => {
   return (
     <>
-      <div className="flex">
-        <div className="lg:w-1/2 w-full bg-white flex justify-start items-center">
-          <div className="ml-10">
-            <h3 className="font-bold text-zinc-800 lg:text-6xl text-3xl leading-relaxed">
+      <div class="flex flex-col flex-col-reverse lg:flex lg:flex-row lg:items-center bg-white">
+        <div class="pt-14 pb-14 lg:pt-0 lg:pb-0 lg:w-1/2 w-full bg-white flex justify-center items-center">
+          <div class="mx-4 lg:mx-10 mt-10 lg:mt-20 text-center lg:text-left">
+            <h3 class="font-bold text-zinc-800 lg:text-6xl md:text-5xl text-3xl leading-relaxed text-slide-in">
               Make extra money
             </h3>
-            <h3 className="font-bold text-zinc-800 lg:text-6xl text-3xl">
+            <h3 class="font-bold text-zinc-800 lg:text-6xl md:text-5xl text-3xl leading-relaxed text-slide-in">
               and keep your day job
             </h3>
-            <button className=" inline-block bg-green-600 rounded-full lg:h-[7vh] lg:w-[40%] w-full h-[10vh] text-white mt-7 mb-4">
+            <button onClick={handleBookAppointmentClick} class="inline-block bg-green-600 rounded-full lg:h-14 lg:w-64 w-full h-12 text-white  mt-10 lg:mt-7 mb-4">
               Book an Appointment
             </button>
           </div>
         </div>
-        <div className="lg:w-1/2 hidden lg:block">
-          <img src={heroImg} alt="Hero Image" />
+        <div class="lg:w-1/2 lg:mt-0 bg-grey-700  ">
+          <img src={heroImg} alt="Hero Image" class="w-full h-full lg:float-right" />
         </div>
       </div>
+
       <div className="w-full">
         <div className="text-center bg-[#367d02] w-full pt-16 pb-16">
           <h1 className="text-[37px] text-white font-bold">Welcome to </h1>
@@ -98,8 +116,8 @@ const Home = () => {
                   className="mx-auto"
                 />
               </div>
-              <h1 className="font-bold mt-4">{item.title}</h1>
-              <p className="text-gray-900">{item.description}</p>
+              <h1 className="font-bold mt-2 text-[25px]">{item.title}</h1>
+              <p className="text-[#747474] mt-3 font-light">{item.description}</p>
             </div>
           ))}
         </div>
@@ -118,18 +136,21 @@ const Home = () => {
                 className="bg-white w-[80%] sm:w-[45%] md:w-[30%] lg:w-[27%] xl:w-[27%] mx-3 mb-6 shadow-md"
               >
                 <div className="w-[100%] text-center">
-                  <div className="w-[90%] m-auto pt-10">
+                  <div className="w-[75%] m-auto pt-10">
                     <img
                       src={item.imgSrc}
                       alt={`Image ${index}`}
                       className="mx-auto"
                     />
                   </div>
-                  <h1 className="font-bold mt-9">{item.title}</h1>
-                  <p className="text-gray-900 my-4">{item.description}</p>
-                  <button className="w-[80%] bg-transparent border border-green-500 text-green-500 rounded-full mt-7 mb-12 px-4 py-2 mt-4 hover:bg-green-500 hover:text-white transition duration-300 ease-in-out">
-                    Read More
-                  </button>
+                  <h1 className="font-bold mt-9 text-[25px]">{item.title}</h1>
+                  <p className="text-[#747474] font-light my-4 w-[75%] m-auto">{item.description}</p>
+                  <Link to={item.link}>
+
+                    <button className="w-[70%] bg-transparent border border-green-800  font-bold  text-xl text-green-800 rounded-full mt-4 mb-12 px-4 py-3 mt-4 hover:bg-green-800 hover:text-white transition duration-300 ease-in-out">
+                      Read More
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
